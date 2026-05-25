@@ -74,6 +74,11 @@ def predict(data: PatientData):
     input_scaled = scaler.transform(input_data)
     prediction = model.predict(input_scaled)[0]
     probability = model.predict_proba(input_scaled)[0][1]
+
+    # Clinical override
+    if data.Suicide_attempt == 1:
+        prediction = 1
+        probability = max(float(probability), 0.90)
     
     return {
         "prediction": int(prediction),
