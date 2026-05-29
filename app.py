@@ -51,7 +51,7 @@ class PatientData(BaseModel):
     Trouble_sleeping_at_night: int
     Problems_concentrating_or_making_decision: int
     Overeating_or_loss_of_appetite: int
-    Overeating_or_loss_of_appetite: int
+   
     Problems_of_bonding_with_baby: int
     Suicide_attempt: int
 
